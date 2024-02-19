@@ -1,3 +1,4 @@
+import blogs_app.views
 """
 URL configuration for blog project.
 
@@ -19,4 +20,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', blogs_app.views.index),
 ]
