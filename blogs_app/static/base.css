@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: beige;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: minmax(95px, 180px) 1fr;
+    grid-template-rows: min-content minmax( 22rem ,max-content) 3rem;
+    gap: 2rem;
+}
+
+header{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-bottom: 1px gray solid;
+}
+
+main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    flex-flow: column;
+    gap: 0.3rem;
+}
+
+aside{
+    grid-row-start: 2;
+    padding: 2rem;
+}
+
+aside ul{
+    border: 1px solid gray;
+    border-radius: 8%;
+    width: max-content;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    grid-column-end: 3;
+    grid-column-start: 1;
+}
+
+.header-nav{
+    border-bottom: 1px gray solid;
+}
+
+.header-nav ul{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.welcome-section{
+    text-align: center;
+    padding: 4.5rem;
+}
+
+.blogs{
+    height: 100%;
+    width: 98%;
+    border: 1px gray solid;
+    display: flex;
+    justify-content: center;
+}
+
+.blog-categories-nav{
+    width: 98%;
+}
+
+.blog-categories-nav ul{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    border: 1px gray solid;
+    padding: 0.2rem;
+
+}
+
+ul, li{
+    list-style: none;
+}
+
+footer{
+    text-align: center;
+    border-top: 1px gray solid;
+}

@@ -3,16 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/base.css">
     <title>Bloggy</title>
 </head>
 <body>
-    <header></header>
-    <h1>share your thoughts</h1>
-    <main>
-        {% block content %}
+    <!-- {% include 'includes/header.html' %} -->
 
-        {% endblock %}
-    </main>
-    <footer></footer>
+    <div>
+        <header>
+            <p>header</p> 
+        </header>
+        <section>
+            {% block welcome %}
+                <h2>Welcom!</h2>
+                <p>what would you like to share with the world today?</p>
+            {% endblock welcome %}
+        </section>
+
+        <div class="blog-area">
+            <nav class="blog-categories-nav">
+                <ul>
+                    <li>
+                        {% block search %}
+                            search
+                        {% endblock search %}
+                    </li>
+                    <li>
+                        مدونة
+                    </li>
+                </ul>
+            </nav>
+    
+            <main>
+                {% block blogs %}
+                    blogs
+                {% endblock blogs %}
+            </main>
+        </div>
+        
+        <aside>
+            {% block user_blog_actions %}
+            <ul>
+                <li>write a blog</li>
+                <li>archives</li>
+                <li>porfile</li>
+            </ul>
+            {% endblock user_blog_actions %}
+        </aside>
+
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
+ 
+    {% block content %}
+    {% endblock content %}
+ 
+    <!-- {% include 'includes/footer.html' %} -->
+
 </body>
 </html>

@@ -1,20 +1,75 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/base.css">
     <title>Bloggy</title>
 </head>
 <body>
-    Hello !! -->
 
-    {% extends 'layouts/base.html' %}
+    <div class="container">
+        <header>
+            <nav class="header-nav">
+                <ul>
+                    <li>
+                        مدونة
+                    </li>
+                    <li>
+                        {% block search %}
+                            بحث
+                        {% endblock search %}
+                    </li>
+                </ul>
+            </nav> 
+            
+            <section class="welcome-section">
+                {% block welcome %}
+                    <h2>Welcom!</h2>
+                    <p>what would you like to share with the world today?</p>
+                {% endblock welcome %}
+            </section>
 
+        </header>
+
+        <main class="blog-area">
+            <nav class="blog-categories-nav">
+                <ul>
+                    <li>
+                        category 1
+                    </li>
+                    <li>
+                        category 2
+                    </li>
+                </ul>
+            </nav>
     
+            <div class="blogs">
+                {% block blogs %}
+                    blogs
+                {% endblock blogs %}
+            </div>
+        </main>
+        
+        <aside>
+            {% block user_blog_actions %}
+            <ul>
+                <li>write a blog</li>
+                <li>archives</li>
+                <li>porfile</li>
+            </ul>
+            {% endblock user_blog_actions %}
+        </aside>
+
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
+ 
     {% block content %}
-    <h1>share your thoughts .. {{ name }}</h1>
-    {% endblock %}
+    {% endblock content %}
+ 
+    <!-- {% include 'includes/footer.html' %} -->
 
-    
-<!-- </body>
-</html> -->
+</body>
+</html>
