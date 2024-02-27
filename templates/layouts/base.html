@@ -1,65 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/base.css">
-    <title>Bloggy</title>
+    <title>{% block title %}Bloggy{% endblock %}</title>
 </head>
 <body>
-    <!-- {% include 'includes/header.html' %} -->
 
-    <div>
-        <header>
-            <p>header</p> 
-        </header>
-        <section>
+    <header>
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    مدونة
+                </li>
+                <li>
+                    {% block search %}
+                        بحث
+                    {% endblock search %}
+                </li>
+            </ul>
+        </nav> 
+        
+        <section class="welcome-section">
             {% block welcome %}
                 <h2>Welcom!</h2>
                 <p>what would you like to share with the world today?</p>
             {% endblock welcome %}
         </section>
 
-        <div class="blog-area">
-            <nav class="blog-categories-nav">
-                <ul>
-                    <li>
-                        {% block search %}
-                            search
-                        {% endblock search %}
-                    </li>
-                    <li>
-                        مدونة
-                    </li>
-                </ul>
-            </nav>
-    
-            <main>
-                {% block blogs %}
-                    blogs
-                {% endblock blogs %}
-            </main>
-        </div>
-        
-        <aside>
-            {% block user_blog_actions %}
-            <ul>
-                <li>write a blog</li>
-                <li>archives</li>
-                <li>porfile</li>
-            </ul>
-            {% endblock user_blog_actions %}
-        </aside>
+    </header>
 
-        <footer>
-            <p>footer</p>
-        </footer>
-    </div>
- 
     {% block content %}
     {% endblock content %}
- 
-    <!-- {% include 'includes/footer.html' %} -->
+
+    <footer>
+        <p>footer</p>
+    </footer>
 
 </body>
 </html>
