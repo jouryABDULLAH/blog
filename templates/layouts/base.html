@@ -1,42 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/base.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <title>{% block title %}Bloggy{% endblock %}</title>
 </head>
 <body>
 
-    <header>
-        <nav class="header-nav">
-            <ul>
-                <li>
-                    مدونة
-                </li>
-                <li>
-                    {% block search %}
-                        بحث
-                    {% endblock search %}
-                </li>
-            </ul>
-        </nav> 
-        
-        <section class="welcome-section">
-            {% block welcome %}
-                <h2>Welcom!</h2>
-                <p>what would you like to share with the world today?</p>
-            {% endblock welcome %}
-        </section>
-
-    </header>
+    {% include 'includes/header.html' %}
 
     {% block content %}
     {% endblock content %}
 
-    <footer>
-        <p>footer</p>
-    </footer>
+    {% include 'includes/footer.html' %}
 
 </body>
 </html>
