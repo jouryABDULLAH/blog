@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 def index(request):
     #name = request.GET.get("name")
-    return render(request, "blogs_app/base.html")
+    return render(request, "blogs_app/blogs.html")
 
