@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}new post{% endblock %}
+
+{% block content %}
+    <form action="">
+        <label for="">post title:
+            <input type="text">
+        </label>
+
+        <label for="">post category:
+            <select name="" id="">
+                <option value="category1">category1</option>
+                <option value="category2">category2</option>
+                <option value="category3">category3</option>
+                <option value="category4">category4</option>
+            </select>
+        </label>
+
+        <p>write here!</p>
+        <textarea name="blog_post" id="blog_post" cols="35" rows="5"></textarea>
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+
+{% endblock content %}

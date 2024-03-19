@@ -2,17 +2,21 @@
 
 <header>
     <nav class="header-nav">
-        <ul>
-            <li>
-                مدونة
-            </li>
+        <ul class="logo-block">
+            <li class="logo">مدونة</li>
             <li>
                 <p>what would you like to share with the world today?</p>
             </li>
+        </ul>
+        
+        <ul class="header-subnav">
             <li>
                 {% block search %}
                     بحث
                 {% endblock search %}
+            </li>
+            <li>
+                login/signup
             </li>
         </ul>
     </nav> 

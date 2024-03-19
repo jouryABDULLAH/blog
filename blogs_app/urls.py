@@ -5,4 +5,5 @@ from blogs_app import views
 
 urlpatterns = [
     path('', views.index),
+    path('new_post', views.new_post),
 ]

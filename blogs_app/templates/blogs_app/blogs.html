@@ -1,27 +1,25 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
+
 {% block title %}blog{% endblock %}
 
 {% block content %}
-
-<aside>
-    {% block user_blog_actions %}
-    <ul>
-        <li>write a blog</li>
-        <li>archives</li>
-        <li>porfile</li>
-    </ul>
-    {% endblock user_blog_actions %}
-</aside>
 
 <main class="blog-area">
     <nav class="blog-categories-nav">
         <ul>
             <li>
-                category 1
+                <button>category1</button> 
             </li>
             <li>
-                category 2
+                <button>category2</button> 
+            </li>
+            <li>
+                <button>category3</button> 
+            </li>
+            <li>
+                <button>category4</button> 
             </li>
         </ul>
     </nav>

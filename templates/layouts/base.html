@@ -4,15 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}?{% now 'U' %}">
     <title>{% block title %}Bloggy{% endblock %}</title>
 </head>
 <body>
 
     {% include 'includes/header.html' %}
 
+    <aside>
+        {% block user_blog_actions %}
+        <ul>
+            <li>
+               <a href="/new_post">write a blog</a> 
+            </li>
+            <li>
+                <a href="/blog/blogs_app/templates/blogs_app/favorites.html">favorites</a>
+            </li>
+            <li>porfile</li>
+        </ul>
+        {% endblock user_blog_actions %}
+    </aside>
+
+    <div class="content">
+
     {% block content %}
+
     {% endblock content %}
+
+    </div>
+    
 
     {% include 'includes/footer.html' %}
 
