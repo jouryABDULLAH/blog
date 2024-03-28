@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import post
 #from django.http import HttpResponse
 
 
 def index(request):
-    #name = request.GET.get("name")
     return render(request, "blogs_app/blogs.html")
 
 def new_post(request):
