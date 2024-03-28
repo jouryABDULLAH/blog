@@ -7,8 +7,13 @@ def index(request):
     return render(request, "blogs_app/blogs.html")
 
 def new_post(request):
-    #name = request.GET.get("name")
-    return render(request, "blogs_app/new_post.html")
+    
+    categories_list = post.objects.values_list('category', flat=True)
+
+# Convert the list to a set to remove duplicates
+    categories_set = set(categories_list)
+
+    return render(request, "blogs_app/new_post.html", {'categories':categories_set})
 
 def my_blogs(request):
 
