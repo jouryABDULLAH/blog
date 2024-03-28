@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}my blogs{% endblock %}
+
+
+{% block content %}
+    
+    <h2>my blogs:</h2>
+
+    <div class="blogs-container">
+        <div class="blog">
+            <h3 class="title">{{post.title}}</h3>
+            <a href="">{{post.category}}</a>
+            <p class="blog-content">{{post.content}}</p>
+
+        </div>
+    </div>
+
+{% endblock content %}

@@ -5,13 +5,14 @@
 {% block title %}new post{% endblock %}
 
 {% block content %}
-    <form action="">
+    <form action="my_blogs" method="post">
+        {% csrf_token %}
         <label for="">post title:
-            <input type="text">
+            <input type="text" name="title" placeholder="Enter a title">
         </label>
 
         <label for="">post category:
-            <select name="" id="">
+            <select name="category">
                 <option value="category1">category1</option>
                 <option value="category2">category2</option>
                 <option value="category3">category3</option>
@@ -20,7 +21,7 @@
         </label>
 
         <p>write here!</p>
-        <textarea name="blog_post" id="blog_post" cols="35" rows="5"></textarea>
+        <textarea name="blog_content" id="blog_post" cols="35" rows="5"></textarea>
         <br><br>
         <button type="submit">submit</button>
     </form>
