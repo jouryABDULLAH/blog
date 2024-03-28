@@ -4,13 +4,18 @@ from .models import post
 
 
 def index(request):
-    return render(request, "blogs_app/blogs.html")
+
+    categories_list = post.objects.values_list('category', flat=True)
+    categories_set = set(categories_list)
+
+    posts = post.objects.all()
+
+
+    return render(request, "blogs_app/blogs.html", {'categories':categories_set, 'posts': posts})
 
 def new_post(request):
     
     categories_list = post.objects.values_list('category', flat=True)
-
-# Convert the list to a set to remove duplicates
     categories_set = set(categories_list)
 
     return render(request, "blogs_app/new_post.html", {'categories':categories_set})

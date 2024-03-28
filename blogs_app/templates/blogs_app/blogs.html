@@ -9,24 +9,25 @@
 <main class="blog-area">
     <nav class="blog-categories-nav">
         <ul>
-            <li>
-                <button>category1</button> 
-            </li>
-            <li>
-                <button>category2</button> 
-            </li>
-            <li>
-                <button>category3</button> 
-            </li>
-            <li>
-                <button>category4</button> 
-            </li>
+            {% for category in categories %}
+                <li>
+                    <button>{{ category }}</button> 
+                </li>
+            {% endfor %}
         </ul>
     </nav>
 
     <div class="blogs">
         {% block blogs %}
-            blogs
+        <div class="blog-post-card">
+            {% for post in posts %}
+            <h2 class="title">{{ post.title }}</h2>
+            <p class="category">{{ post.category }}</p>
+            <p class="date">{{ post.date }}</p>
+            <p class="author">Written by: {{ post.written_by }}</p>
+            <button>read</button>
+            {% endfor %}
+        </div>
         {% endblock blogs %}
     </div>
 </main>
