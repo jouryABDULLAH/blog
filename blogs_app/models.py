@@ -8,4 +8,4 @@ class post(models.Model):
     content = models.TextField()
     date = models.DateTimeField()
     written_by = models.CharField(max_length = 50, default='default user')
-    writer = models.ForeignKey(user.username, on_delete=models.PROTECT)
+    writer = models.ForeignKey(user, on_delete=models.PROTECT, default='defaultUser')
