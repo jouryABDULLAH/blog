@@ -1,0 +1,15 @@
+.blogs{
+    border: 1px solid black;
+    padding: 1.8rem;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+}
+
+.blog-post-card{
+    padding: 0.1rem 1.3rem 3rem 1.3rem;
+    font-size: 0.8rem;
+}

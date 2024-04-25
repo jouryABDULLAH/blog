@@ -10,7 +10,6 @@ def index(request):
 
     posts = post.objects.all()
 
-
     return render(request, "blogs_app/blogs.html", {'categories':categories_set, 'posts': posts})
 
 def new_post(request):

@@ -8,7 +8,7 @@
 body{
     background-color: beige;
     /* background-color: rgb(116, 177, 177); */
-    height: 100vh;
+    height: 70vh;;
 }
 
 ul, li{
@@ -46,6 +46,7 @@ button, input[type="submit"], input[type="reset"] {
 
 .content{
     padding: 1rem;
+    max-width: 80%;
 }
 
 .header-nav{
@@ -71,14 +72,12 @@ button, input[type="submit"], input[type="reset"] {
     gap: 1rem;
 }
 
-/* media query --> max 687 : aside display flex, flex direction row,  */
-/* media query --> min 700 : grid system */
-
 @media only screen and (max-width: 768px){
     aside{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 1rem;
     }
 }  
 
@@ -87,7 +86,7 @@ button, input[type="submit"], input[type="reset"] {
     body{
         display: grid;
         grid-template-columns: 200px 1fr;
-        height: 50vh;
+        height: 70vh;
     }
     
     header {
@@ -97,8 +96,11 @@ button, input[type="submit"], input[type="reset"] {
     aside {
     grid-row: 2 / 3;
     padding: 1rem;
-    justify-self: center;
+    justify-self: end;
     border: 1px solid black;
+    margin-top: 8rem;
+    max-height: 24rem;
+    height: 100%;
     }
 
     footer {
@@ -115,16 +117,51 @@ footer{
 .blogs {
     height: 100%;
     text-align: center;
-    padding: 1rem;
+    padding: 1.8rem;
+    border: 1px black solid;
+    overflow: auto;
+    margin-top: 5rem;
+    max-height: 21rem;
 }
 
 .blog-categories-nav {
-    border: 1px solid black;
     padding: 0.5rem;
+  border: 1px black solid;
+  overflow: auto;
+  max-width: 36rem;
+  margin: auto;
+  height: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .blog-categories-nav > ul {
     display: flex;
-    justify-content: space-around;
+  gap: 1rem;
 }
 
+.blog-categories-nav li {
+    min-width: fit-content;
+  }
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+}
+
+.blog-post-card{
+    padding:1rem;
+    font-size: 0.8rem;
+    border: 1px black solid;
+}
+
+.blog-post-card .title{
+    min-height: 50px;
+}
+
+.blog-post-card > button {
+    position: relative;
+    left: 46%;
+    top: 5%;
+}
