@@ -24,13 +24,13 @@
     <div class="blogs">
         {% block blogs %}
         <div class="cards">
-            {% for post in posts %}
+            {% for user_post in post %}
             <div class="blog-post-card">
-                <h2 class="title">{{ post.title }}</h2>
-                <p class="category">{{ post.category }}</p>
-                <p class="date">{{ post.date }}</p>
-                <p class="author">Written by: {{ post.written_by }}</p>
-                <button id={{post.id}}>
+                <h2 class="title">{{ user_post.title }}</h2>
+                <p class="category">{{ user_post.category }}</p>
+                <p class="date">{{ user_post.date }}</p>
+                <p class="author">Written by: {{ user_post.written_by }}</p>
+                <button id={{user_post.id}}>
                     <a href="/{{post.id}}">read</a>
                 </button>
             </div>
