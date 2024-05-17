@@ -9,22 +9,19 @@
 <main class="blog-area">
     
     <nav class="blog-categories-nav">
-        <ul>
-            <li>
-                <button>All</button> 
-            </li>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <button type="submit" name="category" value="all">All</button>
             {% for category in categories %}
-                <li>
-                    <button>{{ category }}</button> 
-                </li>
+                <button type="submit" name="category" value="{{ category }}">{{ category }}</button>
             {% endfor %}
-        </ul>
+        </form>
     </nav>
 
     <div class="blogs">
         {% block blogs %}
         <div class="cards">
-            {% for user_post in post %}
+            {% for user_post in posts %}
             <div class="blog-post-card">
                 <h2 class="title">{{ user_post.title }}</h2>
                 <p class="category">{{ user_post.category }}</p>

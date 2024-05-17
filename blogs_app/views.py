@@ -4,13 +4,19 @@ from .models import post
 
 
 def index(request):
-
     categories_list = post.objects.values_list('category', flat=True)
     categories_set = set(categories_list)
 
-    posts = post.objects.all()
+    if request.method == "POST":
+        chosen_category = request.POST.get('category')
+        if chosen_category and chosen_category != "all":
+            posts = post.objects.filter(category=chosen_category)
+        else:
+            posts = post.objects.all()
+    else:
+        posts = post.objects.all()
 
-    return render(request, "blogs_app/blogs.html", {'categories':categories_set, 'posts': posts})
+    return render(request, "blogs_app/blogs.html", {'categories': categories_set, 'posts': posts})
 
 def new_post(request):
     

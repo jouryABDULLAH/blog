@@ -6,12 +6,11 @@
 
 {% block content %}
 
-<main>
+<main class="login-signup-newpost-form">
     <h2>User signup</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        {{ form|crispy }}
         <button type="submit">Register</button>
     </form>
 </main>

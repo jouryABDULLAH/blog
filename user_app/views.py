@@ -9,7 +9,7 @@ def signup(request):
         if form.is_valid():
             form.save()
             messages.success(request, f"Your account has been created! You are now able to log in.")
-            return redirect('user_app/login')  # Redirect to login page after successful signup
+            return redirect('/login')  # Redirect to login page after successful signup
     else:
         form = UserSignupForm()
     return render(request, 'user_app/signup.html', {'form': form})
@@ -19,7 +19,7 @@ def login(request):
         form = UserSignupForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('user_app/login')  # Redirect to login page after successful signup
+            return redirect('auth/login')  # Redirect to login page after successful signup
     else:
         form = UserSignupForm()
-    return render(request, 'user_app/signup.html', {'form': form})
+    return render(request, 'user_app/login.html', {'form': form})

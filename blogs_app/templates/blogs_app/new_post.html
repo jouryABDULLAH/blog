@@ -5,7 +5,7 @@
 {% block title %}new post{% endblock %}
 
 {% block content %}
-    <form action="my_blogs" method="post">
+    <form class="login-signup-newpost-form" action="my_blogs" method="post">
         {% csrf_token %}
         <label for="">post title:
             <input type="text" name="title" placeholder="Enter a title">

@@ -6,12 +6,12 @@
 
 {% block content %}
 
-<main>
+<main class="login-signup-newpost-form">
     <h2>User login</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
     </form>
 </main>
  

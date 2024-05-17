@@ -8,7 +8,8 @@
 body{
     background-color: beige;
     /* background-color: rgb(116, 177, 177); */
-    height: 70vh;;
+    height: 70vh;
+
 }
 
 ul, li{
@@ -86,6 +87,7 @@ button, input[type="submit"], input[type="reset"] {
     body{
         display: grid;
         grid-template-columns: 200px 1fr;
+        grid-template-rows: 4rem 35rem 1fr;
         height: 70vh;
     }
     
@@ -111,7 +113,9 @@ button, input[type="submit"], input[type="reset"] {
 } 
 
 footer{
-    
+    border-top: solid black 1px;
+    padding-top: 2rem;
+    margin-top: 2rem;    
 }
 
 .blogs {
@@ -120,7 +124,7 @@ footer{
     padding: 1.8rem;
     border: 1px black solid;
     overflow: auto;
-    margin-top: 5rem;
+    margin-top: 3rem;
     max-height: 21rem;
 }
 
@@ -135,14 +139,11 @@ footer{
   margin-top: 3rem;
 }
 
-.blog-categories-nav > ul {
+.blog-categories-nav > form {
     display: flex;
-  gap: 1rem;
+  justify-content: space-between;
 }
 
-.blog-categories-nav li {
-    min-width: fit-content;
-  }
 
 .cards{
     display: grid;
@@ -164,4 +165,14 @@ footer{
     position: relative;
     left: 46%;
     top: 5%;
+}
+
+
+footer > ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-signup-newpost-form{
+    margin-top: 7rem;
 }
