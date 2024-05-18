@@ -12,5 +12,5 @@ class UserSignupForm(forms.ModelForm):
         fields = ['username', 'email', 'password', 'gender']
 
 class UserLoginForm(AuthenticationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(widget=forms.TextInput())
+    password = forms.CharField(widget=forms.PasswordInput())

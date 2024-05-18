@@ -1,18 +1,20 @@
+<!-- templates/user_app/login.html -->
+
 {% extends 'layouts/base.html' %}
 
 {% load static %}
 
-{% block title %}blog{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
-
-<main class="login-signup-newpost-form">
-    <h2>User login</h2>
+<main class="margin-top-7">
+    <h2>User Login</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
+
         <button type="submit">Login</button>
     </form>
+    <p>Don't have an account? <a style="text-decoration: underline;" href="{% url 'user_app:signup' %}">Signup</a></p>
 </main>
-
 {% endblock content %}

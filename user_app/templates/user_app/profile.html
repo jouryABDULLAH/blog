@@ -1,0 +1,26 @@
+<!-- templates/user_app/profile.html -->
+
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<main class="margin-top-7">
+    <h2>User Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+
+    <h3>Your Blogs</h3>
+    {% if user_posts %}
+        <ul>
+            {% for post in user_posts %}
+                <li>{{ post.title }} - {{ post.date }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have not written any blogs yet.</p>
+    {% endif %}
+</main>
+{% endblock content %}

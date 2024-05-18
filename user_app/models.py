@@ -7,10 +7,6 @@ class UserManager(BaseUserManager):
             raise ValueError('The email is not given.')
         email = self.normalize_email(email)
 
-        # if not username:
-        #     raise ValueError('The username is not given.')
-        # username = self.username
-
         user = self.model(email = email, **extra_fields)
         user.set_password(password)
         user.save()
@@ -45,8 +41,8 @@ class user(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['gender']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['gender','email']
 
     objects = UserManager()
 

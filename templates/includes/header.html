@@ -10,13 +10,10 @@
         </ul>
         
         <ul class="header-subnav">
+           
             <li>
-                {% block search %}
-                    بحث
-                {% endblock search %}
-            </li>
-            <li>
-                <a href="auth/signup">Signup/Login</a>
+                <a href="{% url 'user_app:signup' %}">Signup/Login</a>
+                
             </li>
         </ul>
     </nav> 

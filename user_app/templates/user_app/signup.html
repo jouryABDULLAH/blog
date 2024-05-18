@@ -6,13 +6,14 @@
 
 {% block content %}
 
-<main class="login-signup-newpost-form">
+<main class="margin-top-7">
     <h2>User signup</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Register</button>
     </form>
+    <p>Already have an account? <a href="{% url 'user_app:login' %}" style="text-decoration: underline;">Login</a></p>
 </main>
 
 {% endblock content %}

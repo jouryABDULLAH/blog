@@ -18,10 +18,7 @@
             <li>
                <a href="/new_post">write a blog</a> 
             </li>
-            <li>
-                <a href="/blog/blogs_app/templates/blogs_app/favorites.html">favorites</a>
-            </li>
-            <li>porfile</li>
+            <li> <a href="{% url 'user_app:profile' %}">porfile</a> </li>
         </ul>
         {% endblock user_blog_actions %}
     </aside>
