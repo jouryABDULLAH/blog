@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<main class="post-detail margin-top-7">
+    <div class="post-box">
+        <p><strong>Author:</strong> {{ post.written_by.username }}</p>
+        <p><strong>Date:</strong> {{ post.date }}</p>
+        <h1>{{ post.title }}</h1>
+        <div class="content">{{ post.content }}</div>
+    </div>
+</main>
+{% endblock content %}

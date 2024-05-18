@@ -2,18 +2,20 @@
 
 {% load static %}
 
-{% block title %}blog{% endblock %}
+{% block title %}Blog{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog_listing.css' %}?{% now 'U' %}">
+{% endblock %}
 
 {% block content %}
-
 <main class="blog-area">
-    
     <nav class="blog-categories-nav">
         <form action="/" method="post">
             {% csrf_token %}
-            <button type="submit" name="category" value="all">All</button>
+            <button type="submit" name="category" value="all" class="{% if selected_category == 'all' %}active{% endif %}">All</button>
             {% for category in categories %}
-                <button type="submit" name="category" value="{{ category }}">{{ category }}</button>
+                <button type="submit" name="category" value="{{ category }}" class="{% if selected_category == category %}active{% endif %}">{{ category }}</button>
             {% endfor %}
         </form>
     </nav>
@@ -27,8 +29,8 @@
                 <p class="category">{{ user_post.category }}</p>
                 <p class="date">{{ user_post.date }}</p>
                 <p class="author">Written by: {{ user_post.written_by }}</p>
-                <button id={{user_post.id}}>
-                    <a href="/{{post.id}}">read</a>
+                <button>
+                    <a href="{% url 'blogs_app:post_detail' user_post.id %}">Read</a>
                 </button>
             </div>
             {% endfor %}
@@ -36,5 +38,4 @@
         {% endblock blogs %}
     </div>
 </main>
-
 {% endblock content %}
